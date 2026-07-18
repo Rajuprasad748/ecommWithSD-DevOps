@@ -1,4 +1,14 @@
 package com.ecommerce.enums;
 
-public class PaymentStatus {
+public enum PaymentStatus {
+
+    PENDING,
+
+    SUCCESS,
+
+    FAILED,
+
+    CANCELLED,
+
+    REFUNDED
 }
