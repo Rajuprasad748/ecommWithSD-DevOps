@@ -1,14 +1,20 @@
 package com.ecommerce.services;
 
-import com.raju.ecommerce.dto.response.OrderResponse;
+import com.ecommerce.dto.response.OrderResponse;
 
 import java.util.List;
+
 public interface OrderService {
-    OrderResponse placeOrder();
 
-    OrderResponse getOrderById(Long orderId);
+    OrderResponse placeOrder(
+            Long userId
+    );
 
-    List<OrderResponse> getMyOrders();
+    OrderResponse getOrderById(
+            Long orderId
+    );
 
-    void cancelOrder(Long orderId);
+    List<OrderResponse> getUserOrders(
+            Long userId
+    );
 }

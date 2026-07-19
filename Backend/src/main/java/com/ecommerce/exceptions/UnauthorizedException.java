@@ -1,9 +1,9 @@
 package com.ecommerce.exceptions;
 
-public class ResourceNotFoundException
+public class UnauthorizedException
         extends RuntimeException {
 
-    public ResourceNotFoundException(
+    public UnauthorizedException(
             String message) {
 
         super(message);

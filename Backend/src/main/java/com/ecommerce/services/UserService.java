@@ -5,11 +5,15 @@ import com.ecommerce.dto.response.UserResponse;
 
 import java.util.List;
 
-public class UserService {
+public interface UserService {
 
-    UserResponse getProfile();
+    UserResponse getProfile(
+            Long userId
+    );
 
-    UserResponse getUserById(Long userId);
+    UserResponse getUserById(
+            Long userId
+    );
 
     List<UserResponse> getAllUsers();
 
@@ -18,6 +22,7 @@ public class UserService {
             UpdateUserRequest request
     );
 
-    void deleteUser(Long userId);
-
+    void deleteUser(
+            Long userId
+    );
 }

@@ -1,15 +1,29 @@
 package com.ecommerce.services;
+
 import com.ecommerce.dto.request.AddToCartRequest;
 import com.ecommerce.dto.request.UpdateCartItemRequest;
 import com.ecommerce.dto.response.CartResponse;
-public class CartService {
-    CartResponse getCart();
 
-    CartResponse addToCart(AddToCartRequest request);
+public interface CartService {
 
-    CartResponse updateCartItem(UpdateCartItemRequest request);
+    CartResponse getCart(Long userId);
 
-    void removeCartItem(Long cartItemId);
+    CartResponse addToCart(
+            Long userId,
+            AddToCartRequest request
+    );
 
-    void clearCart();
+    CartResponse updateCartItem(
+            Long userId,
+            UpdateCartItemRequest request
+    );
+
+    void removeCartItem(
+            Long userId,
+            Long cartItemId
+    );
+
+    void clearCart(
+            Long userId
+    );
 }

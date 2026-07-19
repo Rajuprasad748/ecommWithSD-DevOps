@@ -1,16 +1,16 @@
 package com.ecommerce.repos;
 
 import com.ecommerce.entities.Order;
-import com.ecommerce.entities.User;
+import com.ecommerce.entities.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import java.util.Optional;
 
 @Repository
-public interface OrderRepository
-        extends JpaRepository<Order, Long> {
+public interface PaymentRepository
+        extends JpaRepository<Payment, Long> {
 
-    List<Order> findByUser(User user);
+    Optional<Payment> findByOrder(Order order);
 
 }

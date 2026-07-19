@@ -1,15 +1,19 @@
 package com.ecommerce.services;
 
-
 import com.ecommerce.dto.request.ProductRequest;
-import com..ecommerce.dto.response.ProductResponse;
+import com.ecommerce.dto.response.ProductResponse;
 
 import java.util.List;
 
-public class ProductService {
-    ProductResponse createProduct(ProductRequest request);
+public interface ProductService {
 
-    ProductResponse getProductById(Long productId);
+    ProductResponse createProduct(
+            ProductRequest request
+    );
+
+    ProductResponse getProductById(
+            Long productId
+    );
 
     List<ProductResponse> getAllProducts();
 
@@ -18,7 +22,11 @@ public class ProductService {
             ProductRequest request
     );
 
-    void deleteProduct(Long productId);
+    void deleteProduct(
+            Long productId
+    );
 
-    List<ProductResponse> searchProducts(String keyword);
+    List<ProductResponse> searchProducts(
+            String keyword
+    );
 }

@@ -1,9 +1,9 @@
 package com.ecommerce.exceptions;
 
-public class ResourceNotFoundException
+public class BadRequestException
         extends RuntimeException {
 
-    public ResourceNotFoundException(
+    public BadRequestException(
             String message) {
 
         super(message);

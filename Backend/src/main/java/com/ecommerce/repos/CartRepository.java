@@ -1,5 +1,6 @@
 package com.ecommerce.repos;
 
+import com.ecommerce.entities.Cart;
 import com.ecommerce.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -7,11 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository
-        extends JpaRepository<User, Long> {
+public interface CartRepository
+        extends JpaRepository<Cart, Long> {
 
-    Optional<User> findByEmail(String email);
-
-    boolean existsByEmail(String email);
+    Optional<Cart> findByUser(User user);
 
 }
