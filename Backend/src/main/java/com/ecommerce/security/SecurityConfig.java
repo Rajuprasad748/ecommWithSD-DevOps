@@ -40,7 +40,7 @@ public class SecurityConfig {
             throws Exception {
 
         http
-                .csrf(AbstractHttpConfigurer::disable)
+                .csrf(csrf -> {})
 
                 .sessionManagement(
                         session -> session
