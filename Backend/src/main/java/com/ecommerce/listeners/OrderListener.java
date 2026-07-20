@@ -1,5 +1,5 @@
 package com.ecommerce.listeners;
-import com.ecommerce.event.OrderPlacedEvent;
+import com.ecommerce.events.OrderPlacedEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;

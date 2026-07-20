@@ -2,6 +2,7 @@ package com.ecommerce.security;
 
 import jakarta.servlet.http.*;
 import jakarta.servlet.ServletException;
+import org.jspecify.annotations.NonNull;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +14,7 @@ public class JwtAuthenticationEntryPoint
 
     @Override
     public void commence(
-            HttpServletRequest request,
+            @NonNull HttpServletRequest request,
             HttpServletResponse response,
             org.springframework.security.core.AuthenticationException ex)
             throws IOException, ServletException {

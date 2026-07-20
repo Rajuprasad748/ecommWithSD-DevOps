@@ -1,9 +1,9 @@
 package com.ecommerce.controllers;
 
-import com.raju.ecommerce.dto.request.AddToCartRequest;
-import com.raju.ecommerce.dto.request.UpdateCartItemRequest;
-import com.raju.ecommerce.dto.response.CartResponse;
-import com.raju.ecommerce.service.CartService;
+import com.ecommerce.dto.request.AddToCartRequest;
+import com.ecommerce.dto.request.UpdateCartItemRequest;
+import com.ecommerce.dto.response.CartResponse;
+import com.ecommerce.services.CartService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class CartController {
     @GetMapping
     public ResponseEntity<CartResponse> getCart() {
 
-        CartResponse response = cartService.getCart();
+        CartResponse response = cartService.getCart(1L);
 
         return ResponseEntity.ok(response);
     }
@@ -30,7 +30,7 @@ public class CartController {
     public ResponseEntity<CartResponse> addToCart(
             @Valid @RequestBody AddToCartRequest request) {
 
-        CartResponse response = cartService.addToCart(request);
+        CartResponse response = cartService.addToCart(1L , request);
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -42,7 +42,7 @@ public class CartController {
             @Valid @RequestBody UpdateCartItemRequest request) {
 
         CartResponse response =
-                cartService.updateCartItem(request);
+                cartService.updateCartItem(1L , request);
 
         return ResponseEntity.ok(response);
     }
@@ -51,7 +51,7 @@ public class CartController {
     public ResponseEntity<Void> removeCartItem(
             @PathVariable Long cartItemId) {
 
-        cartService.removeCartItem(cartItemId);
+        cartService.removeCartItem( 1L , cartItemId);
 
         return ResponseEntity.noContent().build();
     }
@@ -59,7 +59,7 @@ public class CartController {
     @DeleteMapping("/clear")
     public ResponseEntity<Void> clearCart() {
 
-        cartService.clearCart();
+        cartService.clearCart(22L);
 
         return ResponseEntity.noContent().build();
     }

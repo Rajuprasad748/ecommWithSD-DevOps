@@ -1,5 +1,6 @@
 package com.ecommerce.entities;
 
+import com.ecommerce.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,15 +19,28 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(
+            nullable = false,
+            unique = true
+    )
     private String orderNumber;
 
+    @Column(nullable = false)
     private Double totalAmount;
 
-    private String orderStatus;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private OrderStatus orderStatus;
 
+    @Column(nullable = false)
     private LocalDateTime orderDate;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
+    @ManyToOne(
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(
+            name = "user_id",
+            nullable = false
+    )
     private User user;
 }

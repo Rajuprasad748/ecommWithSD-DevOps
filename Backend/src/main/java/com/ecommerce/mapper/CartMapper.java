@@ -1,7 +1,7 @@
 package com.ecommerce.mapper;
 
 import com.ecommerce.dto.response.CartResponse;
-import com.ecommerce.entity.Cart;
+import com.ecommerce.entities.Cart;
 import org.springframework.stereotype.Component;
 
 @Component

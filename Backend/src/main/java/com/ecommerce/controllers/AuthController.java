@@ -1,8 +1,8 @@
 package com.ecommerce.controllers;
-import com.raju.ecommerce.dto.request.LoginRequest;
-import com.raju.ecommerce.dto.request.RegisterRequest;
-import com.raju.ecommerce.dto.response.AuthResponse;
-import com.raju.ecommerce.service.AuthService;
+import com.ecommerce.dto.request.LoginRequest;
+import com.ecommerce.dto.request.RegisterRequest;
+import com.ecommerce.dto.response.AuthResponse;
+import com.ecommerce.services.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

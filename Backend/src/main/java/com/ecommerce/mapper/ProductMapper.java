@@ -1,7 +1,7 @@
 package com.ecommerce.mapper;
 
 import com.ecommerce.dto.response.ProductResponse;
-import com.ecommerce.entity.Product;
+import com.ecommerce.entities.Product;
 import org.springframework.stereotype.Component;
 
 @Component

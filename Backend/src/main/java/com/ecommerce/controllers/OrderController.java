@@ -1,5 +1,6 @@
 package com.ecommerce.controllers;
-import com.ecommerce.service.OrderService;
+import com.ecommerce.services.OrderService;
+import com.ecommerce.dto.response.OrderResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -23,7 +24,7 @@ public class OrderController    {
         );
 
         OrderResponse response =
-                orderService.placeOrder();
+                orderService.placeOrder(1L);
 
         log.info(
                 "Exiting method : OrderController.placeOrder()"
@@ -61,7 +62,7 @@ public class OrderController    {
         );
 
         List<OrderResponse> orders =
-                orderService.getMyOrders();
+                orderService.getUserOrders(2L);
 
         log.info(
                 "Exiting method : OrderController.getMyOrders()"

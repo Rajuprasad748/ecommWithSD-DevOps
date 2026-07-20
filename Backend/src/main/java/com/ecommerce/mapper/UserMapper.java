@@ -1,7 +1,7 @@
 package com.ecommerce.mapper;
 
 import com.ecommerce.dto.response.UserResponse;
-import com.ecommerce.entity.User;
+import com.ecommerce.entities.User;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,7 +20,7 @@ public class UserMapper {
                 .phoneNumber(user.getPhoneNumber())
                 .role(
                         user.getRole() != null
-                                ? user.getRole().getRoleName().toString()
+                                ? user.getRole().getRoleName()
                                 : null
                 )
                 .build();

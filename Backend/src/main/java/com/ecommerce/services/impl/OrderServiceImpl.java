@@ -124,7 +124,7 @@ public class OrderServiceImpl
                         "COD"
                 )
                 .paymentStatus(
-                        PaymentStatus.PENDING
+                        String.valueOf(PaymentStatus.PENDING)
                 )
                 .order(savedOrder)
                 .build();
@@ -213,6 +213,11 @@ public class OrderServiceImpl
         );
 
         return orders;
+    }
+
+    @Override
+    public void cancelOrder(Long orderId) {
+
     }
 
     private String generateOrderNumber() {

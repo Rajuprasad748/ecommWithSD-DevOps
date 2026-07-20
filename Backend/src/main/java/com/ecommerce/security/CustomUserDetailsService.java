@@ -4,6 +4,7 @@ import com.ecommerce.entities.User;
 import com.ecommerce.repos.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.jspecify.annotations.NonNull;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,7 @@ public class CustomUserDetailsService
 
     @Override
     public UserDetails loadUserByUsername(
-            String email)
+            @NonNull String email)
             throws UsernameNotFoundException {
 
         log.info(
@@ -42,7 +43,7 @@ public class CustomUserDetailsService
                 .authorities(
                         user.getRole()
                                 .getRoleName()
-                                .name()
+//                                .name()
                 )
                 .build();
     }

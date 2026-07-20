@@ -1,4 +1,4 @@
-package com.ecommerce.service.impl;
+package com.ecommerce.services.impl;
 
 import com.ecommerce.dto.request.AddToCartRequest;
 import com.ecommerce.dto.request.UpdateCartItemRequest;

@@ -3,19 +3,22 @@ package com.ecommerce.services.impl;
 import com.ecommerce.dto.request.LoginRequest;
 import com.ecommerce.dto.request.RegisterRequest;
 import com.ecommerce.dto.response.AuthResponse;
-import com.ecommerce.entity.Role;
-import com.ecommerce.entity.User;
+import com.ecommerce.entities.Role;
+import com.ecommerce.entities.User;
 import com.ecommerce.enums.RoleType;
-import com.ecommerce.event.UserRegisteredEvent;
-import com.ecommerce.repository.RoleRepository;
-import com.ecommerce.repository.UserRepository;
-import com.ecommerce.service.AuthService;
+import com.ecommerce.events.UserRegisteredEvent;
+import com.ecommerce.repos.RoleRepository;
+import com.ecommerce.repos.UserRepository;
+import com.ecommerce.services.AuthService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.security.core.userdetails.UserDetails;
+import com.ecommerce.security.CustomUserDetailsService;
+import com.ecommerce.security.JwtService;
 
 @Slf4j
 @Service
@@ -30,6 +33,11 @@ public class AuthServiceImpl implements AuthService {
     private final PasswordEncoder passwordEncoder;
 
     private final ApplicationEventPublisher eventPublisher;
+
+    private final CustomUserDetailsService
+            customUserDetailsService;
+
+    private final JwtService jwtService;
 
     @Override
     public AuthResponse register(RegisterRequest request) {
@@ -122,7 +130,7 @@ public class AuthServiceImpl implements AuthService {
                 "Exiting method : AuthServiceImpl.login()"
         );
 
-        UserDetails userDetails =
+            UserDetails userDetails =
                 customUserDetailsService
                         .loadUserByUsername(
                                 user.getEmail()

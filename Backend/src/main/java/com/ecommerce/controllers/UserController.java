@@ -1,7 +1,7 @@
 package com.ecommerce.controllers;
 import com.ecommerce.dto.request.UpdateUserRequest;
 import com.ecommerce.dto.response.UserResponse;
-import com.ecommerce.service.UserService;
+import com.ecommerce.services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ public class UserController {
         );
 
         UserResponse response =
-                userService.getProfile();
+                userService.getProfile(2L);
 
         log.info(
                 "Exiting method : UserController.getProfile()"
@@ -35,8 +35,7 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<UserResponse> getUserById(
-            @PathVariable Long userId) {
+    public ResponseEntity<UserResponse> getUserById(@PathVariable Long userId) {
 
         log.info(
                 "Entering method : UserController.getUserById() | userId={}",

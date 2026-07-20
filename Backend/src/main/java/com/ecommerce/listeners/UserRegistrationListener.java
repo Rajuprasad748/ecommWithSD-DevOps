@@ -1,5 +1,5 @@
 package com.ecommerce.listeners;
-import com.ecommerce.event.UserRegisteredEvent;
+import com.ecommerce.events.UserRegisteredEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;

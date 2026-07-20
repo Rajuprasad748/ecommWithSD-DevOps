@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.
         AuthenticationConfiguration;
 import org.springframework.security.config.annotation.
         web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.
         SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.
@@ -20,6 +21,7 @@ import org.springframework.security.web.
 import org.springframework.security.web.
         authentication.
         UsernamePasswordAuthenticationFilter;
+
 
 @Configuration
 @RequiredArgsConstructor
@@ -38,7 +40,7 @@ public class SecurityConfig {
             throws Exception {
 
         http
-                .csrf(csrf -> csrf.disable())
+                .csrf(AbstractHttpConfigurer::disable)
 
                 .sessionManagement(
                         session -> session

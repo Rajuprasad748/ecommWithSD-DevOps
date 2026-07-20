@@ -2,7 +2,7 @@ package com.ecommerce.controllers;
 
 import com.ecommerce.dto.request.ProductRequest;
 import com.ecommerce.dto.response.ProductResponse;
-import com.ecommerce.service.ProductService;
+import com.ecommerce.services.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

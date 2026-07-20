@@ -1,6 +1,6 @@
 package com.ecommerce.events;
 
-import com.ecommerce.entity.Order;
+import com.ecommerce.entities.Order;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 

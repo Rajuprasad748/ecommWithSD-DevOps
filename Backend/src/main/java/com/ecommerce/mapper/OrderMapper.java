@@ -1,7 +1,7 @@
 package com.ecommerce.mapper;
 
 import com.ecommerce.dto.response.OrderResponse;
-import com.ecommerce.entity.Order;
+import com.ecommerce.entities.Order;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,7 +18,7 @@ public class OrderMapper {
                 .orderId(order.getId())
                 .orderNumber(order.getOrderNumber())
                 .orderStatus(
-                        order.getOrderStatus().name()
+                        String.valueOf(order.getOrderStatus())
                 )
                 .totalAmount(order.getTotalAmount())
                 .build();
