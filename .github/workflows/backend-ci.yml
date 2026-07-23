@@ -16,9 +16,16 @@ jobs:
 
     runs-on: ubuntu-latest
 
+  
+
     defaults:
       run:
         working-directory : Backend
+
+    env:
+      DB_URL: ${{ secrets.DB_URL }}
+      DB_USER_NAME: ${{ secrets.DB_USER_NAME }}
+      DB_USER_PASSWORD: ${{ secrets.DB_USER_PASSWORD }}
 
     steps:
 
